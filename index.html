@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Solver</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Resuelve Sudoku</h1>
+  <div class="sudoku-board">
+    <div class="row" data-row="0">
+      <input type="number" class="cell" data-col="0" min="0" max="9">
+      <input type="number" class="cell" data-col="1" min="0" max="9">
+      <input type="number" class="cell" data-col="2" min="0" max="9">
+      <input type="number" class="cell" data-col="3" min="0" max="9">
+      <input type="number" class="cell" data-col="4" min="0" max="9">
+      <input type="number" class="cell" data-col="5" min="0" max="9">
+      <input type="number" class="cell" data-col="6" min="0" max="9">
+      <input type="number" class="cell" data-col="7" min="0" max="9">
+      <input type="number" class="cell" data-col="8" min="0" max="9">
+    </div>
+    <div class="row" data-row="1">
+      <input type="number" class="cell" data-col="0" min="0" max="9">
+      <input type="number" class="cell" data-col="1" min="0" max="9">
+      <input type="number" class="cell" data-col="2" min="0" max="9">
+      <input type="number" class="cell" data-col="3" min="0" max="9">
+      <input type="number" class="cell" data-col="4" min="0" max="9">
+      <input type="number" class="cell" data-col="5" min="0" max="9">
+      <input type="number" class="cell" data-col="6" min="0" max="9">
+      <input type="number" class="cell" data-col="7" min="0" max="9">
+      <input type="number" class="cell" data-col="8" min="0" max="9">
+    </div>
+    <div class="row" data-row="2">
+      <input type="number" class="cell" data-col="0" min="0" max="9">
+      <input type="number" class="cell" data-col="1" min="0" max="9">
+      <input type="number" class="cell" data-col="2" min="0" max="9">
+      <input type="number" class="cell" data-col="3" min="0" max="9">
+      <input type="number" class="cell" data-col="4" min="0" max="9">
+      <input type="number" class="cell" data-col="5" min="0" max="9">
+      <input type="number" class="cell" data-col="6" min="0" max="9">
+      <input type="number" class="cell" data-col="7" min="0" max="9">
+      <input type="number" class="cell" data-col="8" min="0" max="9">
+    </div>
+    <div class="row" data-row="3">
+      <input type="number" class="cell" data-col="0" min="0" max="9">
+      <input type="number" class="cell" data-col="1" min="0" max="9">
+      <input type="number" class="cell" data-col="2" min="0" max="9">
+      <input type="number" class="cell" data-col="3" min="0" max="9">
+      <input type="number" class="cell" data-col="4" min="0" max="9">
+      <input type="number" class="cell" data-col="5" min="0" max="9">
+      <input type="number" class="cell" data-col="6" min="0" max="9">
+      <input type="number" class="cell" data-col="7" min="0" max="9">
+      <input type="number" class="cell" data-col="8" min="0" max="9">
+    </div>
+    <div class="row" data-row="4">
+      <input type="number" class="cell" data-col="0" min="0" max="9">
+      <input type="number" class="cell" data-col="1" min="0" max="9">
+      <input type="number" class="cell" data-col="2" min="0" max="9">
+      <input type="number" class="cell" data-col="3" min="0" max="9">
+      <input type="number" class="cell" data-col="4" min="0" max="9">
+      <input type="number" class="cell" data-col="5" min="0" max="9">
+      <input type="number" class="cell" data-col="6" min="0" max="9">
+      <input type="number" class="cell" data-col="7" min="0" max="9">
+      <input type="number" class="cell" data-col="8" min="0" max="9">
+    </div>
+    <div class="row" data-row="5">
+      <input type="number" class="cell" data-col="0" min="0" max="9">
+      <input type="number" class="cell" data-col="1" min="0" max="9">
+      <input type="number" class="cell" data-col="2" min="0" max="9">
+      <input type="number" class="cell" data-col="3" min="0" max="9">
+      <input type="number" class="cell" data-col="4" min="0" max="9">
+      <input type="number" class="cell" data-col="5" min="0" max="9">
+      <input type="number" class="cell" data-col="6" min="0" max="9">
+      <input type="number" class="cell" data-col="7" min="0" max="9">
+      <input type="number" class="cell" data-col="8" min="0" max="9">
+    </div>
+    <div class="row" data-row="6">
+      <input type="number" class="cell" data-col="0" min="0" max="9">
+      <input type="number" class="cell" data-col="1" min="0" max="9">
+      <input type="number" class="cell" data-col="2" min="0" max="9">
+      <input type="number" class="cell" data-col="3" min="0" max="9">
+      <input type="number" class="cell" data-col="4" min="0" max="9">
+      <input type="number" class="cell" data-col="5" min="0" max="9">
+      <input type="number" class="cell" data-col="6" min="0" max="9">
+      <input type="number" class="cell" data-col="7" min="0" max="9">
+      <input type="number" class="cell" data-col="8" min="0" max="9">
+    </div>
+    <div class="row" data-row="7">
+      <input type="number" class="cell" data-col="0" min="0" max="9">
+      <input type="number" class="cell" data-col="1" min="0" max="9">
+      <input type="number" class="cell" data-col="2" min="0" max="9">
+      <input type="number" class="cell" data-col="3" min="0" max="9">
+      <input type="number" class="cell" data-col="4" min="0" max="9">
+      <input type="number" class="cell" data-col="5" min="0" max="9">
+      <input type="number" class="cell" data-col="6" min="0" max="9">
+      <input type="number" class="cell" data-col="7" min="0" max="9">
+      <input type="number" class="cell" data-col="8" min="0" max="9">
+    </div>
+    <div class="row" data-row="8">
+      <input type="number" class="cell" data-col="0" min="0" max="9">
+      <input type="number" class="cell" data-col="1" min="0" max="9">
+      <input type="number" class="cell" data-col="2" min="0" max="9">
+      <input type="number" class="cell" data-col="3" min="0" max="9">
+      <input type="number" class="cell" data-col="4" min="0" max="9">
+      <input type="number" class="cell" data-col="5" min="0" max="9">
+      <input type="number" class="cell" data-col="6" min="0" max="9">
+      <input type="number" class="cell" data-col="7" min="0" max="9">
+      <input type="number" class="cell" data-col="8" min="0" max="9">
+    </div>
+  </div>
+  <button id="resolve-button">Resolver</button>
+  <button id="clear-button">Limpiar</button>
+  <script src="script.js"></script>
+</body>
+
+</html>
