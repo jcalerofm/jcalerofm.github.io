@@ -1,57 +1,207 @@
 body {
   font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f0f0f0;
+  background-color: #f0f4f7;
+  color: #333;
 }
 
-h1 {
-  margin-top: 50px;
+.main-div {
+  max-width: 1200px;
 }
 
-.sudoku-board {
-  display: flex;
-  flex-wrap: wrap;
-  width: 450px;
-  border: 3px solid black;
-  box-sizing: border-box;
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.row {
-  display: flex;
-  width: 100%;
+.sidebar-content {
+  padding: 20px;
 }
 
-.cell {
-  width: 50px;
-  height: 50px;
-  box-sizing: border-box;
-  text-align: center;
-  font-size: 20px;
-  /* Aumenta el tamaño de la fuente */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #4a90e2;
+}
+
+.name {
+  font-size: 1.8em;
   font-weight: bold;
-  /* Establece el estilo de fuente en negrita */
-  border: 1px solid gray;
-  border-width: 1px 1px 1px 1px;
+  color: #333;
 }
 
-/* Establece el grosor de las líneas entre las cuadrículas grandes */
-.cell:nth-child(3n) {
-  border-right-width: 3px;
+.title {
+  font-size: 1.1em;
+  color: #777;
 }
 
-
-
-.row:nth-child(3n) .cell {
-  border-bottom-width: 3px;
+.section-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #4a90e2;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
+.contact-info p, .languages ul li {
+  font-size: 0.95em;
+}
 
+.contact-info a {
+  color: #4a90e2;
+  text-decoration: none;
+}
 
-button {
-  margin: 15px;
-  padding: 10px 20px;
-  font-size: 16px;
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 40px;
+  box-shadow: inset 1px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.list-unstyled p {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.languages-bar {
+  background-color: #e4edf5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.languages-bar .section-title {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bar .label {
+  width: 25%;
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+}
+
+.progress {
+  width: 70%;
+  background-color: #d9e2ec;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-left: 10px;
+  position: relative;
+  height: 25px;
+}
+
+.progress-bar {
+  height: 25px;
+  background-color: #4a90e2;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 8px 0 0 8px;
+  font-size: 0.9em;
+  transition: width 0.5s ease;
+}
+
+.languages-bar .bar .progress {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.languages-bar .bar .progress-bar {
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.language-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.language-button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  font-size: 1em;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.language-button:hover {
+  background-color: #357ab7;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  margin-right: 8px;
+}
+
+#contact-form-section {
+  background-color: #e4edf5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+#contact-form-section h3 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
+#contact-form .form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+#contact-form .form-control {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#contact-form .btn-primary {
+  background-color: #4a90e2;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#contact-form .btn-primary:hover {
+  background-color: #357ab7;
+}
+  
+
+

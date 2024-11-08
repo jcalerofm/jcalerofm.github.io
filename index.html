@@ -1,119 +1,250 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudoku Solver</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-  <h1>Resuelve Sudoku</h1>
-  <div class="sudoku-board">
-    <div class="row" data-row="0">
-      <input type="number" class="cell" data-col="0" min="0" max="9">
-      <input type="number" class="cell" data-col="1" min="0" max="9">
-      <input type="number" class="cell" data-col="2" min="0" max="9">
-      <input type="number" class="cell" data-col="3" min="0" max="9">
-      <input type="number" class="cell" data-col="4" min="0" max="9">
-      <input type="number" class="cell" data-col="5" min="0" max="9">
-      <input type="number" class="cell" data-col="6" min="0" max="9">
-      <input type="number" class="cell" data-col="7" min="0" max="9">
-      <input type="number" class="cell" data-col="8" min="0" max="9">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge Calero - CV</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="language-switch">
+      <button onclick="toggleLanguage()" class="language-button">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+          alt="English"
+          class="flag-icon"
+          id="flag-icon"
+        />
+        <span id="language-text">English</span>
+      </button>
     </div>
-    <div class="row" data-row="1">
-      <input type="number" class="cell" data-col="0" min="0" max="9">
-      <input type="number" class="cell" data-col="1" min="0" max="9">
-      <input type="number" class="cell" data-col="2" min="0" max="9">
-      <input type="number" class="cell" data-col="3" min="0" max="9">
-      <input type="number" class="cell" data-col="4" min="0" max="9">
-      <input type="number" class="cell" data-col="5" min="0" max="9">
-      <input type="number" class="cell" data-col="6" min="0" max="9">
-      <input type="number" class="cell" data-col="7" min="0" max="9">
-      <input type="number" class="cell" data-col="8" min="0" max="9">
+    <div class="container-fluid main-div">
+      <div class="row">
+        <aside class="col-md-4 bg-white sidebar">
+          <div class="sidebar-content">
+            <div class="text-center py-4">
+              <img
+                src="img/profile.jpg"
+                alt="Jorge Calero"
+                class="img-fluid rounded-circle profile-img mb-3"
+              />
+              <h2 class="name">Jorge Calero</h2>
+              <p class="title" id="title">Full-Stack Developer</p>
+              <p id="perfil-education">Técnico Desarrollo de Software</p>
+              <p id="perfil-degree">Grado en Economía y Empresas turísticas</p>
+            </div>
+            <div class="contact-info px-4">
+              <h3 class="section-title" id="contact-title">Contacto</h3>
+              <p>
+                <i class="fab fa-linkedin mr-1"></i
+                ><a
+                  href="https://www.linkedin.com/in/jcalerofm"
+                  id="linkedin-text"
+                  > LinkedIn</a
+                >
+              </p>
+              <p>
+                <i class="fab fa-github mr-1"></i
+                ><a href="https://github.com/jcalerofm"> jcalerofm</a>
+              </p>
+            </div>
+            <section class="languages-bar">
+              <h3 class="section-title" id="languages-title">Idiomas</h3>
+              <div class="bar">
+                <span class="label" id="language-spanish">Español</span>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 100%">100%</div>
+                </div>
+              </div>
+              <div class="bar">
+                <span class="label" id="language-english">Inglés</span>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 80%">80%</div>
+                </div>
+              </div>
+              <div class="bar">
+                <span class="label" id="language-french">Francés</span>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 80%">80%</div>
+                </div>
+              </div>
+              <div class="bar">
+                <span class="label" id="language-other">Otros</span>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 20%">20%</div>
+                </div>
+              </div>
+            </section>
+            <section id="contact-form-section">
+              <h3 class="section-title" id="quick-contact-title">Contacto Rápido</h3>
+              <form action="mail.php" method="post" id="contact-form">
+                  <div class="mb-3">
+                      <label for="name" class="form-label" id="name-label">Nombre:</label>
+                      <input type="text" name="name" id="name" class="form-control" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="email" class="form-label" id="email-label">Correo Electrónico:</label>
+                      <input type="email" name="email" id="email" class="form-control" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="message" class="form-label" id="message-label">Mensaje:</label>
+                      <textarea name="message" id="message" rows="4" class="form-control" required></textarea>
+                  </div>
+                  <div style="display:none;">
+                      <label for="xtraform">No llenar:</label>
+                      <input type="text" name="xtraform" id="xtraform">
+                  </div>
+                  <button type="submit" class="btn btn-primary" id="send-button">Enviar Mensaje</button>
+              </form>
+              <div id="form-response" class="form-response"></div>
+          </section>
+          
+          
+          </div>
+        </aside>
+        <main class="col-md-8 bg-light main-content p-4">
+          <section>
+            <h3 class="section-title" id="profile-title">Perfil</h3>
+            <p id="perfil-text">
+              Desarrollador Full Stack con un perfil técnico sólido y una pasión
+              por crear soluciones seguras, eficientes y escalables.
+              <b>Técnico Superior en Desarrollo de Software</b> con un conjunto
+              de habilidades que incluyen programación web, diseño de interfaces
+              intuitivas, y administración de bases de datos. Además de mi
+              experiencia técnica, mis 14 años en atención al cliente en el
+              sector turístico me han brindado una comprensión única de la
+              experiencia del usuario y habilidades de comunicación y resolución
+              de problemas. Estoy en busca de un rol donde pueda combinar mi
+              creatividad y conocimientos técnicos, y continuar desarrollándome
+              en proyectos innovadores que aporten valor real a las empresas y a
+              sus clientes.
+            </p>
+          </section>
+          <section>
+            <h3 class="section-title" id="skills-title">Habilidades</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <h4 id="backend-title">Backend</h4>
+                <ul>
+                  <li id="habilidad-item-1">Ruby on Rails/Laravel</li>
+                  <li id="habilidad-item-6">Python</li>
+                  <li id="habilidad-item-13">PHP</li>
+                  <li id="habilidad-item-10">JAVA</li>
+                  <li id="habilidad-item-3">API REST</li>
+                  <li id="habilidad-item-4">SQL, MySQL, PostgreSQL</li>
+                  <li id="habilidad-item-17">Astro</li>
+                  <li id="habilidad-item-7">Arquitectura de microservicios</li>
+                  <li id="habilidad-item-9">Docker</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4 id="frontend-title">Frontend</h4>
+                <ul>
+                  <li id="habilidad-item-2">Angular</li>
+                  <li id="habilidad-item-14">React</li>
+                  <li id="habilidad-item-5">ES6 Javascript</li>
+                  <li id="habilidad-item-8">HTML/CSS/Bootstrap</li>
+                  <li id="habilidad-item-15">SASS</li>
+                  <li id="habilidad-item-16">Tailwind CSS</li>
+                  <li id="habilidad-item-11">Git, flujo de trabajo técnico</li>
+                  <li id="habilidad-item-12">WordPress</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3 class="section-title" id="experience-title">Experiencia</h3>
+            <ul>
+              <li>
+                <strong id="experience-company-1">Dabbleam</strong> |
+                <span id="experience-date-1">Abril 2022 - Actualidad</span>
+              </li>
+              <p id="dabbleam-text">
+                Análisis, diseño y soluciones tecnológicas para todo tipo de
+                usuarios. Tanto particulares como empresas. Desarrollos internos
+                como Porteria.d y nowUtoo.
+              </p>
+              <li>
+                <strong id="experience-company-2"
+                  >Trigo Aerospace/Airbus</strong
+                >
+                | <span id="experience-date-2">Febrero 2022 - Abril 2022</span>
+              </li>
+              <p id="trigo-text">
+                Análisis de datos y desarrollo de aplicaciones para su
+                plataforma Big Data para toda la industria de la aviación
+                SKYWISE (Python, SQL, Javascript, HTML, CSS, Bootstrap).
+              </p>
+              <li>
+                <strong id="experience-company-3">Le Wagon (Berlin)</strong> |
+                <span id="experience-date-3"
+                  >Septiembre 2019 - Octubre 2019</span
+                >
+              </li>
+              <p id="le-wagon-text">
+                De asistente de profesor a profesor a tiempo completo. Enseñar
+                Ruby on Rails y el resto de tecnología que se imparte en Le
+                Wagon. Seguimiento de la evolución y aprendizaje de los alumnos.
+              </p>
+              <li>
+                <strong id="experience-company-4">Enterprise Holdings</strong> |
+                <span id="experience-date-4">Julio 2018 - Diciembre 2018</span>
+              </li>
+              <p id="enterprise-text">
+                Trabajo de ventas por objetivos. Supervisión de las normas de
+                calidad. Resolución de incidencias. Introducción de datos en
+                sistema.
+              </p>
+              <li>
+                <strong id="experience-company-5"
+                  >Viajes El Corte Inglés</strong
+                >
+                |
+                <span id="experience-date-5">Septiembre 2005 - Junio 2018</span>
+              </li>
+              <p id="viajes-text">
+                Durante 2010-2012: Etapa en América Latina. Desarrollo de
+                apertura de oficinas en México y Colombia. Trabajo orientado al
+                posicionamiento de la marca en nuevos mercados.
+              </p>
+            </ul>
+          </section>
+          <section>
+            <h3 class="section-title" id="education-title">Educación</h3>
+            <ul>
+              <li>
+                <strong id="educacion-item-1"
+                  >Técnico Superior en Desarrollo de Software</strong
+                >
+                | <span id="education-date-1">2022-2023</span>
+              </li>
+              <li>
+                <strong id="educacion-item-2"
+                  >Le Wagon (Bootcamp de desarrollo)</strong
+                >
+                |
+                <span id="education-date-2">Julio 2019 - Septiembre 2019</span>
+              </li>
+              <li>
+                <strong id="educacion-item-3"
+                  >Grado en Economía y Turismo</strong
+                >
+                - UNED | <span id="education-date-3">2004-2008</span>
+              </li>
+            </ul>
+          </section>
+          
+        </main>
+      </div>
     </div>
-    <div class="row" data-row="2">
-      <input type="number" class="cell" data-col="0" min="0" max="9">
-      <input type="number" class="cell" data-col="1" min="0" max="9">
-      <input type="number" class="cell" data-col="2" min="0" max="9">
-      <input type="number" class="cell" data-col="3" min="0" max="9">
-      <input type="number" class="cell" data-col="4" min="0" max="9">
-      <input type="number" class="cell" data-col="5" min="0" max="9">
-      <input type="number" class="cell" data-col="6" min="0" max="9">
-      <input type="number" class="cell" data-col="7" min="0" max="9">
-      <input type="number" class="cell" data-col="8" min="0" max="9">
-    </div>
-    <div class="row" data-row="3">
-      <input type="number" class="cell" data-col="0" min="0" max="9">
-      <input type="number" class="cell" data-col="1" min="0" max="9">
-      <input type="number" class="cell" data-col="2" min="0" max="9">
-      <input type="number" class="cell" data-col="3" min="0" max="9">
-      <input type="number" class="cell" data-col="4" min="0" max="9">
-      <input type="number" class="cell" data-col="5" min="0" max="9">
-      <input type="number" class="cell" data-col="6" min="0" max="9">
-      <input type="number" class="cell" data-col="7" min="0" max="9">
-      <input type="number" class="cell" data-col="8" min="0" max="9">
-    </div>
-    <div class="row" data-row="4">
-      <input type="number" class="cell" data-col="0" min="0" max="9">
-      <input type="number" class="cell" data-col="1" min="0" max="9">
-      <input type="number" class="cell" data-col="2" min="0" max="9">
-      <input type="number" class="cell" data-col="3" min="0" max="9">
-      <input type="number" class="cell" data-col="4" min="0" max="9">
-      <input type="number" class="cell" data-col="5" min="0" max="9">
-      <input type="number" class="cell" data-col="6" min="0" max="9">
-      <input type="number" class="cell" data-col="7" min="0" max="9">
-      <input type="number" class="cell" data-col="8" min="0" max="9">
-    </div>
-    <div class="row" data-row="5">
-      <input type="number" class="cell" data-col="0" min="0" max="9">
-      <input type="number" class="cell" data-col="1" min="0" max="9">
-      <input type="number" class="cell" data-col="2" min="0" max="9">
-      <input type="number" class="cell" data-col="3" min="0" max="9">
-      <input type="number" class="cell" data-col="4" min="0" max="9">
-      <input type="number" class="cell" data-col="5" min="0" max="9">
-      <input type="number" class="cell" data-col="6" min="0" max="9">
-      <input type="number" class="cell" data-col="7" min="0" max="9">
-      <input type="number" class="cell" data-col="8" min="0" max="9">
-    </div>
-    <div class="row" data-row="6">
-      <input type="number" class="cell" data-col="0" min="0" max="9">
-      <input type="number" class="cell" data-col="1" min="0" max="9">
-      <input type="number" class="cell" data-col="2" min="0" max="9">
-      <input type="number" class="cell" data-col="3" min="0" max="9">
-      <input type="number" class="cell" data-col="4" min="0" max="9">
-      <input type="number" class="cell" data-col="5" min="0" max="9">
-      <input type="number" class="cell" data-col="6" min="0" max="9">
-      <input type="number" class="cell" data-col="7" min="0" max="9">
-      <input type="number" class="cell" data-col="8" min="0" max="9">
-    </div>
-    <div class="row" data-row="7">
-      <input type="number" class="cell" data-col="0" min="0" max="9">
-      <input type="number" class="cell" data-col="1" min="0" max="9">
-      <input type="number" class="cell" data-col="2" min="0" max="9">
-      <input type="number" class="cell" data-col="3" min="0" max="9">
-      <input type="number" class="cell" data-col="4" min="0" max="9">
-      <input type="number" class="cell" data-col="5" min="0" max="9">
-      <input type="number" class="cell" data-col="6" min="0" max="9">
-      <input type="number" class="cell" data-col="7" min="0" max="9">
-      <input type="number" class="cell" data-col="8" min="0" max="9">
-    </div>
-    <div class="row" data-row="8">
-      <input type="number" class="cell" data-col="0" min="0" max="9">
-      <input type="number" class="cell" data-col="1" min="0" max="9">
-      <input type="number" class="cell" data-col="2" min="0" max="9">
-      <input type="number" class="cell" data-col="3" min="0" max="9">
-      <input type="number" class="cell" data-col="4" min="0" max="9">
-      <input type="number" class="cell" data-col="5" min="0" max="9">
-      <input type="number" class="cell" data-col="6" min="0" max="9">
-      <input type="number" class="cell" data-col="7" min="0" max="9">
-      <input type="number" class="cell" data-col="8" min="0" max="9">
-    </div>
-  </div>
-  <button id="resolve-button">Resolver</button>
-  <button id="clear-button">Limpiar</button>
-  <script src="script.js"></script>
-</body>
-
+    <script src="scripts.js"></script>
+  </body>
 </html>
