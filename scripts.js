@@ -244,10 +244,13 @@ const translations = {
   
     for (const [id, texts] of Object.entries(translations)) {
       const element = document.getElementById(id);
+  
       if (element) {
-        const iconElement = element.querySelector(".icon");
-        const iconHTML = iconElement ? iconElement.outerHTML : ""; 
-        element.innerHTML = iconHTML + texts[newLang];
+        if (element.querySelector(".icon")) {
+          element.querySelector(".icon").nextSibling.nodeValue = ` ${texts[newLang]}`;
+        } else {
+          element.innerHTML = texts[newLang];
+        }
       }
     }
   
