@@ -245,7 +245,9 @@ const translations = {
     for (const [id, texts] of Object.entries(translations)) {
       const element = document.getElementById(id);
       if (element) {
-        element.innerHTML = texts[newLang];
+        const iconElement = element.querySelector(".icon");
+        const iconHTML = iconElement ? iconElement.outerHTML : ""; 
+        element.innerHTML = iconHTML + texts[newLang];
       }
     }
   
@@ -254,3 +256,4 @@ const translations = {
         ? "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
         : "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg";
   }
+  

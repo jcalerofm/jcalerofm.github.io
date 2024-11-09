@@ -74,6 +74,13 @@ a {
   margin-top: 20px;
 }
 
+ul li i {
+  color: #071d37;
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+
 .bar {
   display: flex;
   align-items: center;
