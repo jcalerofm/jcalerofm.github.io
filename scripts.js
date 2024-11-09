@@ -84,8 +84,8 @@ const translations = {
       en: "Le Wagon (Berlin)"
     },
     "experience-date-3": {
-      es: "Septiembre 2019 - Octubre 2019",
-      en: "September 2019 - October 2019"
+      es: "Septiembre 2019 - Octubre 2021",
+      en: "September 2019 - October 2021"
     },
     "le-wagon-text": {
       es: "De asistente de profesor a profesor a tiempo completo. Enseñar Ruby on Rails y el resto de tecnología que se imparte en Le Wagon. Seguimiento de la evolución y aprendizaje de los alumnos.",
