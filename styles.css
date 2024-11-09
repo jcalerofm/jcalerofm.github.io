@@ -104,6 +104,10 @@ ul li i {
   height: 25px;
 }
 
+#linkedin-text {
+  margin-left: 4px;
+}
+
 .progress-bar {
   height: 25px;
   background-color: #4a90e2;
