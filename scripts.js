@@ -31,6 +31,10 @@ const translations = {
       es: "Español",
       en: "Spanish"
     },
+    "nativo": {
+      es: "Nativo",
+      en: "Native"
+    },
     "language-english": {
       es: "Inglés",
       en: "English"
