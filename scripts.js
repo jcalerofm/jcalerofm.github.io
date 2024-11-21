@@ -160,8 +160,8 @@ const translations = {
     en: "Frontend",
   },
   "habilidad-item-1": {
-    es: "Ruby on Rails/Laravel",
-    en: "Ruby on Rails/Laravel",
+    es: "Ruby on Rails",
+    en: "Ruby on Rails",
   },
   "habilidad-item-2": {
     es: "Angular",
