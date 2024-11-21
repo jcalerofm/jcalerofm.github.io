@@ -109,6 +109,14 @@ ul li i {
 #linkedin-text {
   margin-left: 4px;
 }
+#experience-company-1,
+#experience-company-2,
+#experience-company-3,
+#experience-company-4,
+#experience-company-5 {
+  font-weight: bolder;
+  font-size: 1.3em;
+}
 
 .progress-bar {
   height: 25px;
