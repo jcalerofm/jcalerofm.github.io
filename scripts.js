@@ -164,8 +164,8 @@ const translations = {
     en: "Ruby on Rails/Laravel",
   },
   "habilidad-item-2": {
-    es: "Angular/React",
-    en: "Angular/React",
+    es: "Angular",
+    en: "Angular",
   },
   "habilidad-item-3": {
     es: "API REST",
