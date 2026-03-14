@@ -1,274 +1,243 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jorge Calero - CV</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=1" />
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-
+    <title>Jorge Calero — Full-Stack Developer</title>
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+      } catch(e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="language-switch">
-      <button onclick="toggleLanguage()" class="language-button">
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="ctrl-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
+      <button class="ctrl-btn lang-btn" onclick="toggleLanguage()" aria-label="Toggle language">
         <img
           src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
           alt="English"
           class="flag-icon"
           id="flag-icon"
         />
-        <span id="language-text">English</span>
+        <span id="language-text">EN</span>
       </button>
     </div>
-    <div class="container-fluid main-div">
-      <div class="row">
-        <aside class="col-md-4 bg-white sidebar">
-          <div class="sidebar-content">
-            <div class="text-center py-4">
-              <img
-                src="./img/profile.jpg"
-                alt="Jorge Calero"
-                class="img-fluid rounded-circle profile-img mb-3"
-              />
-              <h2 class="name">Jorge Calero</h2>
-              <p class="title" id="title">Full-Stack Developer</p>
-              <p id="perfil-education">Técnico Desarrollo de Software</p>
-              <p id="perfil-degree">Grado en Economía y Empresas turísticas</p>
-            </div>
-            <div class="contact-info">
-              <h3 class="section-title" id="contact-title">Contacto</h3>
-              <p>
-                <i class="fab fa-linkedin"></i
-                ><a
-                  href="https://www.linkedin.com/in/jcalerofm"
-                  id="linkedin-text"
-                >
-                    LinkedIn</a
-                >
-              </p>
-              <p>
-                <i class="fab fa-github"></i
-                ><a href="https://github.com/jcalerofm"> jcalerofm</a>
-              </p>
-            </div>
-            <section class="languages-bar">
-              <h3 class="section-title" id="languages-title">Idiomas</h3>
-              <div class="bar">
-                <span class="label" id="language-spanish">Español</span>
-                <div class="progress">
-                  <div class="progress-bar" id="nativo" style="width: 100%">Nativo</div>
-                </div>
-              </div>
-              <div class="bar">
-                <span class="label" id="language-english">Inglés</span>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 80%">80%</div>
-                </div>
-              </div>
-              <div class="bar">
-                <span class="label" id="language-french">Francés</span>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 80%">80%</div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </aside>
 
-        <main class="col-md-8 bg-light main-content p-4">
-          <div class="text-center py-4 mobile-header mobile-only">
-            <img
-              src="./img/profile.jpg"
-              alt="Jorge Calero"
-              class="img-fluid rounded-circle profile-img mb-3"
-            />
-            <h2 class="name">Jorge Calero</h2>
-            <p class="title" id="title">Full-Stack Developer</p>
-            <p id="perfil-education">Técnico Desarrollo de Software</p>
-            <p id="perfil-degree">Grado en Economía y Empresas turísticas</p>
-          </div>
+    <div class="layout">
 
-          <section>
-            <h3 class="section-title" id="profile-title">Perfil</h3>
-            <p id="perfil-text">
-              Desarrollador Full Stack con un perfil técnico sólido y una pasión
-              por crear soluciones seguras, eficientes y escalables.
-              <b>Técnico Superior en Desarrollo de Software</b> con un conjunto
-              de habilidades que incluyen programación web, diseño de interfaces
-              intuitivas, y administración de bases de datos. Además de mi
-              experiencia técnica, mis 14 años en atención al cliente en el
-              sector turístico me han brindado una comprensión única de la
-              experiencia del usuario y habilidades de comunicación y resolución
-              de problemas. Estoy en busca de un rol donde pueda combinar mi
-              creatividad y conocimientos técnicos, y continuar desarrollándome
-              en proyectos innovadores que aporten valor real a las empresas y a
-              sus clientes.
-            </p>
-          </section>
-          <section>
-            <h3 class="section-title" id="skills-title">Habilidades</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <h4 id="backend-title">Backend</h4>
-                <ul>
-                  <li id="habilidad-item-1"><span class="icon"><i class="fas fa-gem"></i></span> Ruby on Rails</li>
-                  <li id="habilidad-item-6"><span class="icon"><i class="fab fa-python"></i></span> Python</li>
-                  <li id="habilidad-item-13"><span class="icon"><i class="fab fa-php"></i></span> PHP/Laravel</li>
-                  <li id="habilidad-item-10"><span class="icon"><i class="fab fa-java"></i></span> JAVA</li>
-                  <li id="habilidad-item-3"><span class="icon"><i class="fas fa-plug"></i></span> API REST</li>
-                  <li id="habilidad-item-4"><span class="icon"><i class="fas fa-database"></i></span> SQL, MySQL, PostgreSQL</li>
-                  <li id="habilidad-item-17"><span class="icon"><i class="fas fa-star"></i></span> Astro</li>
-                  <li id="habilidad-item-7"><span class="icon"><i class="fas fa-cubes"></i></span> Arquitectura de microservicios</li>
-                  <li id="habilidad-item-9"><span class="icon"><i class="fab fa-docker"></i></span> Docker</li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <h4 id="frontend-title">Frontend</h4>
-                <ul>
-                  <li id="habilidad-item-2"><span class="icon"><i class="fab fa-angular"></i></span> Angular</li>
-                  <li id="habilidad-item-14"><span class="icon"><i class="fab fa-react"></i></span> React</li>
-                  <li id="habilidad-item-5"><span class="icon"><i class="fab fa-js-square"></i></span> ES6 Javascript</li>
-                  <li id="habilidad-item-8"><span class="icon"><i class="fab fa-html5"></i></span> HTML/CSS/Bootstrap</li>
-                  <li id="habilidad-item-15"><span class="icon"><i class="fab fa-sass"></i></span> SASS</li>
-                  <li id="habilidad-item-16"><span class="icon"><i class="fab fa-css3-alt"></i></span> Tailwind CSS</li>
-                  <li id="habilidad-item-11"><span class="icon"><i class="fab fa-git-alt"></i></span> Git, flujo de trabajo técnico</li>
-                  <li id="habilidad-item-12"><span class="icon"><i class="fab fa-wordpress"></i></span> WordPress</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-          <section>
-            <h3 class="section-title" id="experience-title">Experiencia</h3>
-            <ul>
-              <li>
-                <strong id="experience-company-1">Dabbleam</strong> |
-                <span id="experience-date-1">Abril 2022 - Actualidad</span>
-              </li>
-              <p id="dabbleam-text">
-                Análisis, diseño y soluciones tecnológicas para todo tipo de
-                usuarios. Tanto particulares como empresas. Desarrollos internos
-                como Porteria.de y nowUtoo.
-              </p>
-              <li>
-                <strong id="experience-company-2"
-                  >Trigo Aerospace/Airbus</strong
-                >
-                | <span id="experience-date-2">Febrero 2022 - Abril 2022</span>
-              </li>
-              <p id="trigo-text">
-                Análisis de datos y desarrollo de aplicaciones para su
-                plataforma Big Data para toda la industria de la aviación
-                SKYWISE (Python, SQL, Javascript, HTML, CSS, Bootstrap).
-              </p>
-              <li>
-                <strong id="experience-company-3">Le Wagon (Berlin)</strong> |
-                <span id="experience-date-3"
-                  >Septiembre 2019 - Octubre 2021</span
-                >
-              </li>
-              <p id="le-wagon-text">
-                De asistente de profesor a profesor a tiempo completo. Enseñar
-                Ruby on Rails y el resto de tecnología que se imparte en Le
-                Wagon. Seguimiento de la evolución y aprendizaje de los alumnos.
-              </p>
-              <li>
-                <strong id="experience-company-4">Enterprise Holdings</strong> |
-                <span id="experience-date-4">Julio 2018 - Diciembre 2018</span>
-              </li>
-              <p id="enterprise-text">
-                Trabajo de ventas por objetivos. Supervisión de las normas de
-                calidad. Resolución de incidencias. Introducción de datos en
-                sistema.
-              </p>
-              <li>
-                <strong id="experience-company-5"
-                  >Viajes El Corte Inglés</strong
-                >
-                |
-                <span id="experience-date-5">Septiembre 2005 - Junio 2018</span>
-              </li>
-              <p id="viajes-text">
-                Durante 2010-2012: Etapa en América Latina. Desarrollo de
-                apertura de oficinas en México y Colombia. Trabajo orientado al
-                posicionamiento de la marca en nuevos mercados.
-              </p>
-            </ul>
-          </section>
-          <section>
-            <h3 class="section-title" id="education-title">Educación</h3>
-            <ul>
-              <li>
-                <strong id="educacion-item-1"
-                  >Técnico Superior en Desarrollo de Software</strong
-                >
-                | <span id="education-date-1">2022-2023</span>
-              </li>
-              <li>
-                <strong id="educacion-item-2"
-                  >Le Wagon (Bootcamp de desarrollo)</strong
-                >
-                |
-                <span id="education-date-2">Julio 2019 - Septiembre 2019</span>
-              </li>
-              <li>
-                <strong id="educacion-item-3"
-                  >Grado en Economía y Turismo</strong
-                >
-                - UNED | <span id="education-date-3">2004-2008</span>
-              </li>
-            </ul>
-          </section>
-
-          <div class="contact-info mobile-only">
-            <h3 class="section-title" id="contact-title">Contacto</h3>
-            <p>
-              <i class="fab fa-linkedin"></i
-              ><a
-                href="https://www.linkedin.com/in/jcalerofm"
-                id="linkedin-text"
-              >
-                LinkedIn</a
-              >
-            </p>
-            <p>
-              <i class="fab fa-github"></i
-              ><a href="https://github.com/jcalerofm"> jcalerofm</a>
-            </p>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="profile-card">
+          <img src="./img/profile.jpg" alt="Jorge Calero" class="avatar" />
+          <h1 class="name">Jorge Calero</h1>
+          <p class="job-title" id="title">Full-Stack Developer</p>
+          <div class="badges">
+            <span class="badge" id="perfil-education">Técnico Desarrollo de Software</span>
+            <span class="badge" id="perfil-degree">Economía y Turismo</span>
           </div>
-          <section class="languages-bar mobile-only">
-            <h3 class="section-title" id="languages-title">Idiomas</h3>
-            <div class="bar">
-              <span class="label" id="language-spanish">Español</span>
-              <div class="progress">
-                <div class="progress-bar" id="nativo" style="width: 100%">Nativo</div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-label" id="contact-title">Contacto</h3>
+          <a href="https://www.linkedin.com/in/jcalerofm" class="contact-link" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i>
+            <span id="linkedin-text">LinkedIn</span>
+          </a>
+          <a href="https://github.com/jcalerofm" class="contact-link" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i>
+            <span>jcalerofm</span>
+          </a>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-label" id="languages-title">Idiomas</h3>
+          <div class="lang-bar">
+            <span class="lang-name" id="language-spanish">Español</span>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="100"></div>
+            </div>
+            <span class="lang-level" id="nativo">Nativo</span>
+          </div>
+          <div class="lang-bar">
+            <span class="lang-name" id="language-english">Inglés</span>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="80"></div>
+            </div>
+            <span class="lang-level">B2</span>
+          </div>
+          <div class="lang-bar">
+            <span class="lang-name" id="language-french">Francés</span>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="80"></div>
+            </div>
+            <span class="lang-level">B2</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+
+        <section class="content-section">
+          <h2 class="section-heading" id="profile-title">Perfil</h2>
+          <p class="about-text" id="perfil-text">
+            Full Stack Developer especializado en SAP Customer Data Cloud (Gigya) e integración empresarial. Actualmente en <strong>Vorwerk</strong>, desarrollando soluciones de identidad digital, gestión de consentimientos y flujos de datos seguros mediante SAP Integration Suite. <strong>Técnico Superior en Desarrollo de Software</strong> con experiencia en arquitecturas escalables, APIs REST y tecnologías modernas de frontend y backend. Mi trayectoria combina rigor técnico con visión de negocio, forjada en más de una década en entornos orientados al cliente.
+          </p>
+        </section>
+
+        <section class="content-section">
+          <h2 class="section-heading" id="skills-title">Habilidades</h2>
+          <div class="skills-grid">
+            <div class="skills-group">
+              <h4 class="skills-group-label" id="backend-title">Backend</h4>
+              <div class="tags">
+                <span class="tag"><i class="fab fa-python"></i><span id="habilidad-item-6">Python</span></span>
+                <span class="tag"><i class="fas fa-gem"></i><span id="habilidad-item-1">Ruby on Rails</span></span>
+                <span class="tag"><i class="fab fa-php"></i><span id="habilidad-item-13">PHP / Laravel</span></span>
+                <span class="tag"><i class="fab fa-java"></i><span id="habilidad-item-10">Java</span></span>
+                <span class="tag"><i class="fas fa-plug"></i><span id="habilidad-item-3">API REST</span></span>
+                <span class="tag"><i class="fas fa-database"></i><span id="habilidad-item-4">SQL / MySQL / PostgreSQL</span></span>
+                <span class="tag"><i class="fab fa-docker"></i><span id="habilidad-item-9">Docker</span></span>
+                <span class="tag"><i class="fas fa-cubes"></i><span id="habilidad-item-7">Microservicios</span></span>
+                <span class="tag"><i class="fas fa-star"></i><span id="habilidad-item-17">Astro</span></span>
+                <span class="tag"><i class="fas fa-id-card"></i><span id="habilidad-item-18">SAP CDC / Gigya</span></span>
+                <span class="tag"><i class="fas fa-link"></i><span id="habilidad-item-19">SAP Integration Suite</span></span>
               </div>
             </div>
-            <div class="bar">
-              <span class="label" id="language-english">Inglés</span>
-              <div class="progress">
-                <div class="progress-bar" style="width: 80%">80%</div>
+            <div class="skills-group">
+              <h4 class="skills-group-label" id="frontend-title">Frontend</h4>
+              <div class="tags">
+                <span class="tag"><i class="fab fa-js-square"></i><span id="habilidad-item-5">TypeScript / ES6</span></span>
+                <span class="tag"><i class="fab fa-angular"></i><span id="habilidad-item-2">Angular</span></span>
+                <span class="tag"><i class="fab fa-react"></i><span id="habilidad-item-14">React</span></span>
+                <span class="tag"><i class="fab fa-html5"></i><span id="habilidad-item-8">HTML / CSS / Bootstrap</span></span>
+                <span class="tag"><i class="fab fa-sass"></i><span id="habilidad-item-15">SASS</span></span>
+                <span class="tag"><i class="fab fa-css3-alt"></i><span id="habilidad-item-16">Tailwind CSS</span></span>
+                <span class="tag"><i class="fab fa-git-alt"></i><span id="habilidad-item-11">Git</span></span>
+                <span class="tag"><i class="fab fa-wordpress"></i><span id="habilidad-item-12">WordPress</span></span>
               </div>
             </div>
-            <div class="bar">
-              <span class="label" id="language-french">Francés</span>
-              <div class="progress">
-                <div class="progress-bar" style="width: 80%">80%</div>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2 class="section-heading" id="experience-title">Experiencia</h2>
+          <div class="timeline">
+
+            <div class="timeline-item timeline-item--current">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="timeline-header">
+                  <strong class="company" id="experience-company-0">Vorwerk</strong>
+                  <span class="date" id="experience-date-0">Abr 2025 — Actualidad</span>
+                </div>
+                <p class="role" id="experience-role-0">Full Stack Developer · SAP Customer Data Cloud</p>
+                <p class="timeline-desc" id="vorwerk-text">
+                  Desarrollo e integración de soluciones basadas en SAP Customer Data Cloud (Gigya), gestionando identidades de usuario, consentimientos y preferencias. Trabajo estrecho con equipos de integración para conectar CDC con otros sistemas empresariales mediante SAP Integration Suite, creando flujos de datos seguros y automatizados que mejoran la experiencia del cliente y la confianza digital.
+                </p>
               </div>
             </div>
-          </section>
-        </main>
-      </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="timeline-header">
+                  <strong class="company" id="experience-company-1">Dabbleam</strong>
+                  <span class="date" id="experience-date-1">Abr 2022 — 2025</span>
+                </div>
+                <p class="timeline-desc" id="dabbleam-text">
+                  Análisis, diseño y soluciones tecnológicas para particulares y empresas. Desarrollos internos como Porteria.de y nowUtoo.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="timeline-header">
+                  <strong class="company" id="experience-company-2">Trigo Aerospace / Airbus</strong>
+                  <span class="date" id="experience-date-2">Feb 2022 — Abr 2022</span>
+                </div>
+                <p class="timeline-desc" id="trigo-text">
+                  Análisis de datos y desarrollo de aplicaciones para la plataforma Big Data SKYWISE de la industria de la aviación (Python, SQL, JavaScript, HTML, CSS).
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="timeline-header">
+                  <strong class="company" id="experience-company-3">Le Wagon Berlin</strong>
+                  <span class="date" id="experience-date-3">Sep 2019 — Oct 2021</span>
+                </div>
+                <p class="timeline-desc" id="le-wagon-text">
+                  De asistente a profesor a tiempo completo. Enseñanza de Ruby on Rails y tecnologías web. Seguimiento del aprendizaje de los alumnos.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="timeline-header">
+                  <strong class="company" id="experience-company-4">Enterprise Holdings</strong>
+                  <span class="date" id="experience-date-4">Jul 2018 — Dic 2018</span>
+                </div>
+                <p class="timeline-desc" id="enterprise-text">
+                  Ventas por objetivos, supervisión de estándares de calidad y resolución de incidencias.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="timeline-header">
+                  <strong class="company" id="experience-company-5">Viajes El Corte Inglés</strong>
+                  <span class="date" id="experience-date-5">Sep 2005 — Jun 2018</span>
+                </div>
+                <p class="timeline-desc" id="viajes-text">
+                  Etapa en América Latina (2010–2012): apertura de oficinas en México y Colombia y posicionamiento de marca en nuevos mercados.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2 class="section-heading" id="education-title">Educación</h2>
+          <div class="edu-list">
+            <div class="edu-item">
+              <strong id="educacion-item-1">Técnico Superior en Desarrollo de Software</strong>
+              <span class="date" id="education-date-1">2022–2023</span>
+            </div>
+            <div class="edu-item">
+              <strong id="educacion-item-2">Le Wagon — Bootcamp de Desarrollo Web</strong>
+              <span class="date" id="education-date-2">Jul–Sep 2019</span>
+            </div>
+            <div class="edu-item">
+              <strong id="educacion-item-3">Grado en Economía y Turismo — UNED</strong>
+              <span class="date" id="education-date-3">2004–2008</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
     </div>
+
     <script src="scripts.js"></script>
   </body>
 </html>
