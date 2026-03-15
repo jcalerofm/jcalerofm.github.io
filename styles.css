@@ -573,39 +573,52 @@ a:hover {
     width: 100%;
     position: static;
     height: auto;
-    padding: 72px 24px 28px;
+    padding: 72px 24px 32px;
     border-right: none;
     border-bottom: 1px solid var(--border);
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 24px;
-    align-items: flex-start;
   }
 
   .profile-card {
-    flex: 1;
-    min-width: 180px;
-    text-align: left;
+    width: 100%;
+    text-align: center;
     padding-bottom: 0;
     border-bottom: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .avatar {
-    width: 72px;
-    height: 72px;
-    margin-left: 0;
+    width: 80px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .badges {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .sidebar-section {
-    flex: 1;
-    min-width: 140px;
+    width: 100%;
+    max-width: 320px;
+    align-items: center;
+  }
+
+  .sidebar-label {
+    text-align: center;
+  }
+
+  .contact-link {
+    justify-content: center;
+  }
+
+  .lang-bar {
+    justify-content: center;
   }
 
   .main-content {
@@ -625,25 +638,5 @@ a:hover {
   .timeline-header {
     flex-direction: column;
     gap: 1px;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-    flex-direction: column;
-  }
-
-  .profile-card {
-    align-items: center;
-    text-align: center;
-  }
-
-  .avatar {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .badges {
-    align-items: center;
   }
 }
