@@ -220,10 +220,7 @@ a:hover { opacity: 0.75; }
   background: transparent;
 }
 
-@media (min-width: 769px) {
-  html, body { overflow: hidden; }
-  .layout { height: 100vh; }
-}
+/* Desktop: body scrolls freely, sidebar sticks */
 
 /* ============================================================
    SIDEBAR
@@ -249,7 +246,12 @@ a:hover { opacity: 0.75; }
 .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
 @media (min-width: 769px) {
-  .sidebar { height: 100vh; position: sticky; top: 0; }
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: flex-start; /* required for sticky to work inside flexbox */
+  }
 }
 
 /* Profile card */
@@ -415,9 +417,7 @@ a:hover { opacity: 0.75; }
 .main-content::-webkit-scrollbar-track { background: transparent; }
 .main-content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-@media (min-width: 769px) {
-  .main-content { height: 100vh; }
-}
+/* main-content flows naturally on desktop so the whole page scrolls */
 
 /* ============================================================
    SECTIONS

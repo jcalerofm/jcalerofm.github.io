@@ -214,9 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 350);
 
   /* --- Scroll fade-in for sections --- */
-  const isMobile = window.innerWidth < 769;
-  const scrollRoot = isMobile ? null : document.querySelector('.main-content');
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -224,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }, {
-    root: scrollRoot,
+    root: null, /* always use viewport — body scrolls on desktop too */
     threshold: 0.06,
     rootMargin: '0px 0px -20px 0px',
   });
