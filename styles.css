@@ -267,6 +267,7 @@ a:hover { opacity: 0.75; }
   height: 96px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 15%;
   border: 2px solid var(--glass-border);
   box-shadow:
     0 0 0 4px var(--accent-soft),
